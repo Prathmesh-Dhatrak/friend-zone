@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
     boxShadow: "0 0 15px rgb(7 15 63 / 33%)",
     backgroundColor: "#ffe8d6",
     color: "#001219",
-    
+    textAlign: "center",
   },
   paper: {
     // marginTop: theme.spacing(10),
@@ -29,6 +29,10 @@ const useStyles = makeStyles((theme) => ({
   submit: {
     margin: theme.spacing(3, 0, 2),
     color: "#001219",
+  },
+  colorize: {
+    fontSize: "1rem",
+    color: "#fff",
   },
 }));
 
@@ -62,6 +66,10 @@ function SignUp() {
         >
           Sign In With Google
         </Button>
+      </div>
+      <div style={{width: "100%" , backgroundColor: "#000", color:"#fff", borderTopRightRadius:"2rem", borderTopLeftRadius:"2rem"}}>
+        <span className={classes.colorize}>Designed</span> with ❤️ <br />
+        by Prathmesh Dhatrak
       </div>
     </Container>
   );

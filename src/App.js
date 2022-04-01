@@ -80,6 +80,19 @@ function App() {
                 <Route path="/channel/:id">
                   <Chat />
                 </Route>
+                <div
+                  style={{
+                    width: "100%",
+                    backgroundColor: "#000",
+                    color: "#fff",
+                    borderTopRightRadius: "2rem",
+                    borderTopLeftRadius: "2rem",
+                  }}
+                >
+                  <span className={classes.colorize}>Designed</span> with ❤️{" "}
+                  <br />
+                  by Prathmesh Dhatrak
+                </div>
               </Switch>
             </main>
           </div>
@@ -90,3 +103,4 @@ function App() {
 }
 
 export default App;
+
