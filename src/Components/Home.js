@@ -90,7 +90,7 @@ function Home() {
             Welcome to <img style={{ width: "12rem" }} src={Logo} alt=""></img>
           </Typography>
           <Typography component="h1" className={classes.subHeading}>
-            See all the channels 
+            See all the channels
           </Typography>
         </Grid>
       </Grid>

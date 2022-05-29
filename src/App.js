@@ -6,7 +6,6 @@ import Login from "./Components/SignUp";
 import Home from "./Components/Home";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { auth, db } from "./Firebase/Firebase";
-import "./App.css";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -67,14 +66,18 @@ function App() {
     <div className="App">
       <Router>
         {!user ? (
-          <Login />
+          <>
+            <Route path="/" exact>
+              <Login />
+            </Route>
+          </>
         ) : (
-          <div className={classes.root}>
+          <div className={[classes.root, "base"]}>
             <Application uid={user} />
             <main className={classes.content}>
               <div className={classes.toolbar} style={{ minHeight: "50px" }} />
               <Switch>
-                <Route path="/" exact>
+                <Route path="/home" exact>
                   <Home />
                 </Route>
                 <Route path="/channel/:id">

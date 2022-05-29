@@ -49,6 +49,21 @@ function SignUp() {
         console.log(err);
       });
   };
+  const loginDefault = () => {
+    auth
+      .signInWithEmailAndPassword("prathmesh101dhatrak@gmail.com", "123456")
+      .then((userCredential) => {
+        // Signed in
+        // const user = userCredential.user;
+        console.log("Success");
+        // ...
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log(errorCode, errorMessage);
+      });
+  };
 
   return (
     <Container component="div" maxWidth="xs" className={classes.root}>
@@ -66,8 +81,26 @@ function SignUp() {
         >
           Sign In With Google
         </Button>
+        or
+        <Button
+          variant="outlined"
+          color="primary"
+          className={classes.submit}
+          startIcon={<FcGoogle />}
+          onClick={loginDefault}
+        >
+          Default Login
+        </Button>
       </div>
-      <div style={{width: "100%" , backgroundColor: "#000", color:"#fff", borderTopRightRadius:"2rem", borderTopLeftRadius:"2rem"}}>
+      <div
+        style={{
+          width: "100%",
+          backgroundColor: "#000",
+          color: "#fff",
+          borderTopRightRadius: "2rem",
+          borderTopLeftRadius: "2rem",
+        }}
+      >
         <span className={classes.colorize}>Designed</span> with ❤️ <br />
         by Prathmesh Dhatrak
       </div>
