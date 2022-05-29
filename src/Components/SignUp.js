@@ -51,7 +51,7 @@ function SignUp() {
   };
   const loginDefault = () => {
     auth
-      .signInWithEmailAndPassword("prathmesh101dhatrak@gmail.com", "123456")
+      .signInWithEmailAndPassword("defaultuser@gmail.com", "123456")
       .then((userCredential) => {
         // Signed in
         // const user = userCredential.user;
