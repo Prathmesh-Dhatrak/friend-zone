@@ -4,6 +4,7 @@ import Application from "./Components/Application";
 import Chat from "./Components/Chat";
 import Login from "./Components/SignUp";
 import Home from "./Components/Home";
+import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { auth, db } from "./Firebase/Firebase";
 
