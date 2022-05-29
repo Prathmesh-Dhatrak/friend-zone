@@ -1,6 +1,7 @@
 body {
     height: 100vh !important;
     overflow: hidden !important;
+    background-color: #b4b3b1 !important;
   }
   
   /* width */
@@ -10,13 +11,13 @@ body {
   
   /* Track */
   ::-webkit-scrollbar-track {
-    background: #4461f2 !important;
+    background: #4461F2 !important;
     border-radius: 5px;
   }
   
   /* Handle */
   ::-webkit-scrollbar-thumb {
-    background: #2f2519 !important;
+    background: #2F2519 !important;
     border-radius: 5px;
   }
   
@@ -53,35 +54,32 @@ body {
   .MuiDialog-paper {
     overflow-y: visible !important;
     background-color: #ffe8d6 !important;
-    color: #2f2519 !important;
+    color: #2F2519 !important;
     width: 530px;
   }
   
   .emoji-mart-dark {
     color: #fff;
     border-color: #cb997e !important;
-    background-color: #2f2519 !important;
+    background-color: #2F2519 !important;
   }
   
   .emoji-mart-dark .emoji-mart-category-label span {
-    background-color: #2f2519 !important;
+    background-color: #2F2519 !important;
     color: #fff;
     border-radius: 5px;
   }
   
   .emoji-mart-dark .emoji-mart-search input {
     color: #fff;
-    border-color: #2f2519;
-    background-color: #2f2519;
+    border-color: #2F2519;
+    background-color: #2F2519;
   }
   
   a {
     color: #e3a7ff;
-    background-color: #2f2519;
   }
   
   .MuiSnackbarContent-root {
-    background-color: #2f2519 !important;
+    background-color: #2F2519 !important;
   }
-  
-  

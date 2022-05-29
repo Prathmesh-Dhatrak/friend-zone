@@ -66,18 +66,14 @@ function App() {
     <div className="App">
       <Router>
         {!user ? (
-          <>
-            <Route path="/" exact>
-              <Login />
-            </Route>
-          </>
+          <Login />
         ) : (
-          <div className={[classes.root, "base"]}>
+          <div className={classes.root}>
             <Application uid={user} />
             <main className={classes.content}>
               <div className={classes.toolbar} style={{ minHeight: "50px" }} />
               <Switch>
-                <Route path="/home" exact>
+                <Route path="/" exact>
                   <Home />
                 </Route>
                 <Route path="/channel/:id">

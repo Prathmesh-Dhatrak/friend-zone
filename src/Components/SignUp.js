@@ -51,7 +51,7 @@ function SignUp() {
   };
   const loginDefault = () => {
     auth
-      .signInWithEmailAndPassword("defaultuser@gmail.com", "123456")
+      .signInWithEmailAndPassword("santosh101dhatrak@gmail.com", "123456")
       .then((userCredential) => {
         // Signed in
         // const user = userCredential.user;
@@ -59,9 +59,7 @@ function SignUp() {
         // ...
       })
       .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        console.log(errorCode, errorMessage);
+        console.log(error);
       });
   };
 
