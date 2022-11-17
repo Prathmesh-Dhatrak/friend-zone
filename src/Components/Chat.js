@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import TextField from "@material-ui/core/TextField";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
@@ -161,6 +161,35 @@ function Chat() {
     e.target.value = null;
   };
 
+  const handleClickOutside = () => {
+    setEmojiBtn(false);
+  };
+
+  const useOutsideClick = (callback) => {
+    const ref = useRef();
+
+    useEffect(() => {
+      const handleClick = (event) => {
+        if (ref.current && !ref.current.contains(event.target)) {
+          callback();
+        }
+      };
+
+      document.addEventListener("click", handleClick);
+
+      return () => {
+        document.removeEventListener("click", handleClick);
+      };
+    }, [ref, callback]);
+
+    return ref;
+  };
+
+  const ref = useOutsideClick(handleClickOutside);
+  const handleClick = () => {
+    setEmojiBtn(true);
+  };
+
   return (
     <div className={classes.root}>
       {modalState ? <FileUpload setState={openModal} file={file} /> : null}
@@ -197,11 +226,12 @@ function Chat() {
               <RiImageAddLine style={{ color: "#fff" }} />
             </IconButton>
           </label>
-
           <IconButton
             color="primary"
             component="button"
-            onClick={() => setEmojiBtn(!emojiBtn)}
+            className="click-emoji-btn"
+            onClick={handleClick}
+            ref={ref}
           >
             <GrEmoji style={{ color: "#fff" }} />
           </IconButton>
