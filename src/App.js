@@ -80,7 +80,7 @@ function App() {
                 <Route path="/channel/:id">
                   <Chat />
                 </Route>
-                <div
+                {/* <div
                   style={{
                     width: "100%",
                     backgroundColor: "#000",
@@ -92,7 +92,7 @@ function App() {
                   <span className={classes.colorize}>Designed</span> with ❤️{" "}
                   <br />
                   by Prathmesh Dhatrak
-                </div>
+                </div> */}
               </Switch>
             </main>
           </div>
