@@ -8,9 +8,11 @@ import { AiFillLike } from "react-icons/ai";
 import { AiFillFire } from "react-icons/ai";
 import { AiFillHeart } from "react-icons/ai";
 import { AiFillDelete } from "react-icons/ai";
+import { AiFillEdit } from "react-icons/ai";
 import { db } from "../Firebase/Firebase";
 import { useParams } from "react-router-dom";
 import DeleteModal from "./DeleteModal";
+import EditModal from "./EditModal";
 import { Anchorme } from "react-anchorme";
 
 const useStyles = makeStyles((theme) => ({
@@ -95,6 +97,7 @@ const useStyles = makeStyles((theme) => ({
 
 function Messages({ values, msgId }) {
   const [style, setStyle] = useState({ display: "none" });
+  const [editMessageModal, setEditMessageModal] = useState(false);
   const [deleteModal, setDeleteModal] = useState(false);
   const classes = useStyles();
 
@@ -131,6 +134,10 @@ function Messages({ values, msgId }) {
   const selectedFire = userFire
     ? { color: "#ffc336", backgroundColor: "#545454" }
     : null;
+
+  const showEditMessageModal = () => {
+    setEditMessageModal(!editMessageModal);
+  };
 
   const showDeleteModal = () => {
     setDeleteModal(!deleteModal);
@@ -319,6 +326,22 @@ function Messages({ values, msgId }) {
     }
   };
 
+  const editMsg = (id, newMessage) => {
+    db.collection("channels")
+      .doc(channelId)
+      .collection("messages")
+      .doc(id)
+      .update({
+        text: newMessage,
+      })
+      .then((res) => {
+        console.log("message updated successfully");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   const deleteMsg = (id) => {
     db.collection("channels")
       .doc(channelId)
@@ -342,6 +365,15 @@ function Messages({ values, msgId }) {
           postImg={postImg}
           deleteMsg={deleteMsg}
           handleModal={showDeleteModal}
+        />
+      ) : null}
+      {editMessageModal ? (
+        <EditModal
+          msgId={msgId}
+          text={values.text}
+          postImg={postImg}
+          editMsg={editMsg}
+          handleModal={showEditMessageModal}
         />
       ) : null}
       <div
@@ -457,16 +489,28 @@ function Messages({ values, msgId }) {
                 <AiFillHeart className={classes.emojiBtn} />
               </IconButton>
               {uid === messegerUid ? (
-                <IconButton
-                  component="span"
-                  style={{ padding: "4px" }}
-                  onClick={showDeleteModal}
-                >
-                  <AiFillDelete
-                    className={classes.emojiBtn}
-                    color="#c3c3c3f0"
-                  />
-                </IconButton>
+                <>
+                  <IconButton
+                    component="span"
+                    style={{ padding: "4px" }}
+                    onClick={showEditMessageModal}
+                  >
+                    <AiFillEdit
+                      className={classes.emojiBtn}
+                      color="#c3c3c3f0"
+                    />
+                  </IconButton>
+                  <IconButton
+                    component="span"
+                    style={{ padding: "4px" }}
+                    onClick={showDeleteModal}
+                  >
+                    <AiFillDelete
+                      className={classes.emojiBtn}
+                      color="#c3c3c3f0"
+                    />
+                  </IconButton>
+                </>
               ) : null}
             </div>
           </div>
@@ -477,3 +521,4 @@ function Messages({ values, msgId }) {
 }
 
 export default Messages;
+
