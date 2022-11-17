@@ -33,7 +33,7 @@ function DeleteModal({ msgId, text, deleteMsg, handleModal, postImg }) {
         <DialogContent>
           <DialogContentText
             id="alert-dialog-description"
-            style={{ color: "white", fontSize: "1.2rem" }}
+            style={{ color: "black", fontSize: "1.2rem" }}
           >
             {text}
           </DialogContentText>
@@ -46,15 +46,19 @@ function DeleteModal({ msgId, text, deleteMsg, handleModal, postImg }) {
           ) : null}
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose} style={{ color: "white" }}>
+          <Button onClick={handleClose} style={{ color: "black" }}>
             Cancel
           </Button>
 
           <Button
             onClick={handleDelete}
-            color="primary"
+            color="error"
+            style={{
+              color: "red",
+              borderColor: "red",
+            }}
             autoFocus
-            variant="contained"
+            variant="outlined"
           >
             Delete
           </Button>
@@ -65,3 +69,4 @@ function DeleteModal({ msgId, text, deleteMsg, handleModal, postImg }) {
 }
 
 export default DeleteModal;
+
