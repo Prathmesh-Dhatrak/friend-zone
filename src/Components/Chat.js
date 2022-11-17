@@ -96,9 +96,8 @@ function Chat() {
 
   const sendMsg = (e) => {
     e.preventDefault();
-    if (userNewMsg && params.id) {
+    if (userNewMsg.trim() !== "" && params.id) {
       const userData = JSON.parse(localStorage.getItem("userDetails"));
-
       if (userData) {
         const displayName = userData.displayName;
         const imgUrl = userData.photoURL;
@@ -213,9 +212,9 @@ function Chat() {
             <TextField
               className={classes.message}
               required
-              id="outlined-basic"
+              id="filled-basic"
               label="Enter Message"
-              variant="outlined"
+              variant="filled"
               multiline
               rows={1}
               rowsMax={2}
@@ -235,3 +234,4 @@ function Chat() {
 }
 
 export default Chat;
+
