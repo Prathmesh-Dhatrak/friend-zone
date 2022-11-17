@@ -15,6 +15,11 @@ import firebase from "firebase/app";
 import { db } from "../Firebase/Firebase";
 
 const useStyles = makeStyles((theme) => ({
+  root: {
+    "& .MuiFormLabel-root": {
+      color: "rgba(255, 255, 255, 0.5)",
+    },
+  },
   displayImage: {
     height: "105px",
     width: "180px",
@@ -36,15 +41,17 @@ function FileUpload({ setState, file }) {
   const [open, setOpen] = useState(true);
   const [progress, setProgress] = useState(0);
   const [progressBar, setProgressBar] = useState({ display: "none" });
-  const [message, setMessage] = useState("");
+  const [message, setMessage] = useState(null);
 
   const handleClose = () => {
     setOpen(false);
     setState();
   };
-
   const sendMsg = (downloadURL) => {
-    if (params.id) {
+    if (
+      (message === null && params.id) ||
+      (message.trim() !== "" && params.id)
+    ) {
       const userData = JSON.parse(localStorage.getItem("userDetails"));
 
       if (userData) {
@@ -59,7 +66,7 @@ function FileUpload({ setState, file }) {
         const heart = {};
         const postImg = downloadURL;
         const obj = {
-          text: message,
+          text: message === null ? "" : message,
           timestamp: firebase.firestore.Timestamp.now(),
           userImg: imgUrl,
           userName: displayName,
@@ -122,6 +129,7 @@ function FileUpload({ setState, file }) {
       <Dialog
         open={open}
         onClose={handleClose}
+        className={classes.root}
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
       >
@@ -140,14 +148,15 @@ function FileUpload({ setState, file }) {
             }}
           >
             <TextField
-              id="outlined-basic"
               label="Add A Message"
               fullWidth
               margin="normal"
-              variant="outlined"
+              id="filled-basic"
+              variant="filled"
               style={{
-                backgroundColor: "rgb(45, 45, 73)",
+                backgroundColor: "#2F2519",
                 borderRadius: "5px",
+                color: "#000",
               }}
               onChange={(e) => {
                 setMessage(e.target.value);
@@ -186,3 +195,4 @@ function FileUpload({ setState, file }) {
 }
 
 export default FileUpload;
+
