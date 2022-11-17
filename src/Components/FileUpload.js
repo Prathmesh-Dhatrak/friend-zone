@@ -176,13 +176,17 @@ function FileUpload({ setState, file }) {
           </div>
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose} style={{ color: "white" }}>
+          <Button onClick={handleClose} style={{ color: "black" }}>
             Cancel
           </Button>
           <Button
             type="submit"
             onClick={(e) => handleUpload(e)}
-            color="primary"
+            color="success"
+            style={{
+              color: "white",
+              backgroundColor: "green",
+            }}
             autoFocus
             variant="contained"
           >

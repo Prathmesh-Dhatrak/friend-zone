@@ -116,12 +116,7 @@ function EditProfile({ toggler, alert }) {
         <DialogActions>
           <Button
             onClick={handleClose}
-            color="error"
-            variant="outlined"
-            style={{
-              color: "red",
-              borderColor: "red",
-            }}
+            style={{ color: "black" }}
           >
             Cancel
           </Button>
