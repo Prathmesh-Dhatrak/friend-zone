@@ -142,6 +142,8 @@ function Chat() {
       setUserNewMsg("");
       setEmojiBtn(false);
     }
+    setUserNewMsg("");
+    setEmojiBtn(false);
   };
 
   const addEmoji = (e) => {
