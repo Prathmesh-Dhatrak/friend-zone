@@ -6,6 +6,15 @@ import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import { db } from "../Firebase/Firebase";
+import { makeStyles } from "@material-ui/core/styles";
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    "& .MuiFormLabel-root": {
+      color: "rgba(255, 255, 255, 0.5)",
+    },
+  },
+}));
 
 function EditProfile({ toggler, alert }) {
   const [open, setOpen] = useState(true);
@@ -13,6 +22,8 @@ function EditProfile({ toggler, alert }) {
   const [displayName, setDisplayName] = useState("");
   const [email, setEmail] = useState("");
   const [uid, setUid] = useState("");
+
+  const classes = useStyles();
 
   const handleClose = () => {
     setOpen(false);
@@ -51,16 +62,17 @@ function EditProfile({ toggler, alert }) {
         open={open}
         onClose={handleClose}
         aria-labelledby="form-dialog-title"
+        className={classes.root}
       >
         <DialogTitle id="form-dialog-title">Edit User Profile</DialogTitle>
         <DialogContent>
           <form autoComplete="off">
             <TextField
-              id="outlined-basic"
               label="Name"
               fullWidth
               margin="normal"
-              variant="outlined"
+              id="filled-basic"
+              variant="filled"
               disabled
               value={userName}
               style={{
@@ -70,11 +82,11 @@ function EditProfile({ toggler, alert }) {
               }}
             />
             <TextField
-              id="outlined-basic"
               label="Email"
               fullWidth
               margin="normal"
-              variant="outlined"
+              id="filled-basic"
+              variant="filled"
               disabled
               value={email}
               style={{
@@ -85,11 +97,11 @@ function EditProfile({ toggler, alert }) {
             />
 
             <TextField
-              id="outlined-basic"
               label="Display Name"
               fullWidth
               margin="normal"
-              variant="outlined"
+              id="filled-basic"
+              variant="filled"
               value={displayName}
               style={{
                 backgroundColor: "#2F2519",
@@ -119,7 +131,7 @@ function EditProfile({ toggler, alert }) {
             variant="contained"
             style={{
               color: "white",
-              backgroundColor: "green"
+              backgroundColor: "green",
             }}
           >
             Update

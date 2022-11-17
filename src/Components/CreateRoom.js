@@ -5,10 +5,21 @@ import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
 import TextField from "@material-ui/core/TextField";
 import DialogTitle from "@material-ui/core/DialogTitle";
+import { makeStyles } from "@material-ui/core/styles";
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    "& .MuiFormLabel-root": {
+      color: "rgba(255, 255, 255, 0.5)",
+    },
+  },
+}));
 
 function CreateRoom({ create, manage }) {
   const [open, setOpen] = useState(true);
   const [roomName, setRoomName] = useState("");
+
+  const classes = useStyles();
 
   const handleClose = () => {
     setOpen(false);
@@ -29,6 +40,7 @@ function CreateRoom({ create, manage }) {
         onClose={handleClose}
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
+        className={classes.root}
       >
         <DialogTitle id="alert-dialog-title">
           {"Create A New Channel"}
@@ -36,17 +48,17 @@ function CreateRoom({ create, manage }) {
         <DialogContent>
           <form autoComplete="off" onSubmit={handleNewRoom}>
             <TextField
-              id="outlined-basic"
               label="Enter Channel Name"
               fullWidth
               margin="normal"
-              variant="outlined"
+              id="filled-basic"
+              variant="filled"
               required
               value={roomName}
               style={{
                 backgroundColor: "#2F2519",
                 borderRadius: "5px",
-                color: "#000",
+                color: "#ffff",
               }}
               onChange={(e) => {
                 setRoomName(e.target.value);
@@ -74,7 +86,7 @@ function CreateRoom({ create, manage }) {
             color="success"
             style={{
               color: "white",
-              backgroundColor: "green"
+              backgroundColor: "green",
             }}
             autoFocus
             variant="contained"
@@ -88,3 +100,4 @@ function CreateRoom({ create, manage }) {
 }
 
 export default CreateRoom;
+

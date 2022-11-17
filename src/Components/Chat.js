@@ -19,6 +19,9 @@ import "emoji-mart/css/emoji-mart.css";
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
+    "& .MuiFormLabel-root": {
+      color: "rgba(255, 255, 255, 0.5)", // or black
+    },
   },
   chat: {
     position: "relative",
@@ -34,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
   },
   message: {
     width: "100%",
-    color: "black",
+    color: "#ffffff",
   },
   roomName: {
     border: "1px solid #0000004a",
@@ -216,8 +219,8 @@ function Chat() {
               label="Enter Message"
               variant="filled"
               multiline
-              rows={1}
-              rowsMax={2}
+              minRows={1}
+              maxRows={2}
               value={userNewMsg}
               onChange={(e) => {
                 setUserNewMsg(e.target.value);
