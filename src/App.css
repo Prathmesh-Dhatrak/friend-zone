@@ -11,14 +11,14 @@ body {
   
   /* Track */
   ::-webkit-scrollbar-track {
-    background: #4461F2 !important;
+    background: #2F2519 !important;
     border-radius: 5px;
   }
   
   /* Handle */
   ::-webkit-scrollbar-thumb {
-    background: #2F2519 !important;
-    border-radius: 5px;
+    background: #ffd0a1 !important;
+    border-radius: 3px;
   }
   
   .emoji-mart {
