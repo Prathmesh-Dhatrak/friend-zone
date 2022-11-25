@@ -15,7 +15,6 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "center",
   },
   paper: {
-    // marginTop: theme.spacing(10),
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
@@ -53,10 +52,7 @@ function SignUp() {
     auth
       .signInWithEmailAndPassword("demoUser@gmail.com", "123456")
       .then((userCredential) => {
-        // Signed in
-        // const user = userCredential.user;
         console.log("Success");
-        // ...
       })
       .catch((error) => {
         console.log(error);
@@ -68,7 +64,7 @@ function SignUp() {
       <div className={classes.paper}>
         <img src={loginImg} className={classes.mainImg} alt="signup img" />
         <Topography variant="h4" style={{ paddingTop: "15px" }}>
-          Sign In To Friend Zone
+          Sign in to Friend-Zone
         </Topography>
         <Button
           variant="outlined"
@@ -77,7 +73,7 @@ function SignUp() {
           startIcon={<FcGoogle />}
           onClick={login}
         >
-          Sign In With Google
+          Sign in Google
         </Button>
         or
         <Button

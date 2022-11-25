@@ -24,7 +24,6 @@ $ npm start
 - Profile customization
 - Authentication:
   - User Signup
-  - User Login
   - User Logout
   - Demo Login
 - Fully Responsive
