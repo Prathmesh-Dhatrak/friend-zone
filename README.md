@@ -38,6 +38,8 @@ $ npm start
 - React Scrollable Feed
 
 ## **Demo -**
-<div align="center" >
-  https://user-images.githubusercontent.com/45693044/204060151-18e84ad6-d167-4a1c-a2cc-592a99697458.mp4
-</div>
+
+
+https://user-images.githubusercontent.com/45693044/204060226-1657bb16-2000-48ca-b36e-3e4296d4c96a.mp4
+
+
