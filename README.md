@@ -18,6 +18,7 @@ $ npm start
 
 - Group CRUD functionality
 - Realtime group messaging
+- CRUD functionality for message
 - Resources sharing
 - Emoji reaction to messages
 - Profile customization

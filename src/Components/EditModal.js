@@ -27,7 +27,7 @@ function EditModal({ msgId, text, editMsg, handleModal, postImg }) {
 
   const handleEdit = (e) => {
     e.preventDefault();
-    editMsg(msgId, newMessage);
+    if (newMessage.trim() !== "") editMsg(msgId, newMessage);
     handleModal();
   };
 
