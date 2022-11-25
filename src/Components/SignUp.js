@@ -51,7 +51,7 @@ function SignUp() {
   };
   const loginDefault = () => {
     auth
-      .signInWithEmailAndPassword("santosh101dhatrak@gmail.com", "123456")
+      .signInWithEmailAndPassword("demoUser@gmail.com", "123456")
       .then((userCredential) => {
         // Signed in
         // const user = userCredential.user;
@@ -87,7 +87,7 @@ function SignUp() {
           startIcon={<FcGoogle />}
           onClick={loginDefault}
         >
-          Default Login
+          Demo Login
         </Button>
       </div>
       <div
@@ -107,4 +107,3 @@ function SignUp() {
 }
 
 export default SignUp;
-
