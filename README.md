@@ -1,29 +1,42 @@
-# Friend Zone - Chat Web Application
-A fun and easy to use Chat Room or workspace where friends can share resources and hang around.
+<div align="center">
+  <img src="https://res.cloudinary.com/prathmeshdhatrak-com/image/upload/v1669400903/Friend%20Zone/logo_rwt9yc.png" width="12rem" alt="logo"/>
+  
+# [Friend Zone - Web Chat Application](https://friends-zone.prathmeshdhatrak.com/)
+  A fun and easy to use chat room or workspace where friends can share resources and hang around.
+</div>
 
-Link -: [friends-zone.prathmeshdhatrak.com](https://friends-zone.prathmeshdhatrak.com/)
+## **How to install and run locally ?**
 
-## Fetchers
-Easy SignIn with Google, 
-Create Rooms, 
-Realtime group messaging, 
-Realtime resources sharing, 
-Supports Emoji, 
-Reaction on messages, 
+```
+$ git clone https://github.com/Prathmesh-Dhatrak/friend-zone.git
+$ cd friend-zone
+$ npm install
+$ npm start
+```
 
-## Tech Stack 
-React JS, 
-Firebase, 
-Material UI, 
-React Icons, 
+## **Features -**
 
+- Group CRUD functionality
+- Realtime group messaging
+- Resources sharing
+- Emoji reaction to messages
+- Profile customization
+- Authentication:
+  - User Signup
+  - User Login
+  - User Logout
+  - Demo Login
+- Fully Responsive
 
-## Steps to run frontend
+## **Built with -**
 
-### Clone project
-### `yarn install`
-### `yarn start`
+- React JS
+- Material UI
+- Firebase
+- React Router v6
+- React Icons
+- React Scrollable Feed
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## **Demo -**
 
+https://user-images.githubusercontent.com/52956782/168848701-9af61773-8372-4752-b611-ab4af3175d62.mov
