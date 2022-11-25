@@ -39,4 +39,4 @@ $ npm start
 
 ## **Demo -**
 
-https://user-images.githubusercontent.com/52956782/168848701-9af61773-8372-4752-b611-ab4af3175d62.mov
+https://res.cloudinary.com/prathmeshdhatrak-com/video/upload/v1669414166/Friend%20Zone/Demo_vaerls.mkv
