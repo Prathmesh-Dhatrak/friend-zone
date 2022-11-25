@@ -38,5 +38,6 @@ $ npm start
 - React Scrollable Feed
 
 ## **Demo -**
-
-https://res.cloudinary.com/prathmeshdhatrak-com/video/upload/v1669414166/Friend%20Zone/Demo_vaerls.mkv
+<div align="center" >
+  https://user-images.githubusercontent.com/45693044/204060151-18e84ad6-d167-4a1c-a2cc-592a99697458.mp4
+</div>
