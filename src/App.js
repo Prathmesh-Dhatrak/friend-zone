@@ -72,8 +72,13 @@ function App() {
   return (
     <div className="App">
       {isLoading ? (
-        <Box display="flex" maxWidth={false} alignItems="center">
-          <CircularProgress color="secondary" />
+        <Box
+          display="flex"
+          sx={{
+            height: '100%',width: '100%',alignContent: 'center',alignItems: 'center',justifyContent: 'center'
+          }}
+        >
+          <CircularProgress />
         </Box>
       ) : (
         <Router>
