@@ -7,6 +7,8 @@ import Home from "./Components/Home";
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { auth, db } from "./Firebase/Firebase";
+import CircularProgress from "@material-ui/core/CircularProgress";
+import Box from "@material-ui/core/Box";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -23,8 +25,10 @@ const useStyles = makeStyles((theme) => ({
 function App() {
   const classes = useStyles();
   const [user, setUser] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
+    setIsLoading(true);
     auth.onAuthStateChanged((user) => {
       if (user) {
         db.collection("users")
@@ -57,7 +61,9 @@ function App() {
           });
 
         setUser(user.uid);
+        setIsLoading(false);
       } else {
+        setIsLoading(false);
         setUser(null);
       }
     });
@@ -65,42 +71,37 @@ function App() {
 
   return (
     <div className="App">
-      <Router>
-        {!user ? (
-          <Login />
-        ) : (
-          <div className={classes.root}>
-            <Application uid={user} />
-            <main className={classes.content}>
-              <div className={classes.toolbar} style={{ minHeight: "50px" }} />
-              <Switch>
-                <Route path="/" exact>
-                  <Home />
-                </Route>
-                <Route path="/channel/:id">
-                  <Chat />
-                </Route>
-                {/* <div
-                  style={{
-                    width: "100%",
-                    backgroundColor: "#000",
-                    color: "#fff",
-                    borderTopRightRadius: "2rem",
-                    borderTopLeftRadius: "2rem",
-                  }}
-                >
-                  <span className={classes.colorize}>Designed</span> with ❤️{" "}
-                  <br />
-                  by Prathmesh Dhatrak
-                </div> */}
-              </Switch>
-            </main>
-          </div>
-        )}
-      </Router>
+      {isLoading ? (
+        <Box display="flex" maxWidth={false} alignItems="center">
+          <CircularProgress color="secondary" />
+        </Box>
+      ) : (
+        <Router>
+          {!user ? (
+            <Login />
+          ) : (
+            <div className={classes.root}>
+              <Application uid={user} />
+              <main className={classes.content}>
+                <div
+                  className={classes.toolbar}
+                  style={{ minHeight: "50px" }}
+                />
+                <Switch>
+                  <Route path="/" exact>
+                    <Home />
+                  </Route>
+                  <Route path="/channel/:id">
+                    <Chat />
+                  </Route>
+                </Switch>
+              </main>
+            </div>
+          )}
+        </Router>
+      )}
     </div>
   );
 }
 
 export default App;
-
