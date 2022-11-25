@@ -1,7 +1,7 @@
-<div align="center">
-  <img src="https://res.cloudinary.com/prathmeshdhatrak-com/image/upload/v1669400903/Friend%20Zone/logo_rwt9yc.png" width="12rem" alt="logo"/>
+<div align="center" >
+  <img src="https://res.cloudinary.com/prathmeshdhatrak-com/image/upload/v1669400903/Friend%20Zone/logo_rwt9yc.png" width="500" alt="logo"/>
   
-# [Friend Zone - Web Chat Application](https://friends-zone.prathmeshdhatrak.com/)
+# [Web Chat Application](https://friends-zone.prathmeshdhatrak.com/)
   A fun and easy to use chat room or workspace where friends can share resources and hang around.
 </div>
 
