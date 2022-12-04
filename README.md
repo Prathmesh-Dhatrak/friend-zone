@@ -23,10 +23,10 @@ $ npm start
 - Emoji reaction to messages
 - Profile customization
 - Authentication:
-  - User Signup
-  - User Logout
-  - Demo Login
-- Fully Responsive
+  - User signup
+  - User logout
+  - Demo login
+- Fully responsive
 
 ## **Built with -**
 
