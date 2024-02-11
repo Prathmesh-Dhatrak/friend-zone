@@ -50,7 +50,7 @@ function SignUp() {
   };
   const loginDefault = () => {
     auth
-      .signInWithEmailAndPassword("demoUser@gmail.com", "123456")
+      .signInWithEmailAndPassword("prathmesh101dhatrak@gmail.com", "123456")
       .then((userCredential) => {
         console.log("Success");
       })
